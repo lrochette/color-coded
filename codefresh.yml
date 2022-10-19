@@ -123,4 +123,4 @@ steps:
       git_user_email: laurent.rochette@codefresh.io
       allow_empty: false
       add:
-        - kustomize/color/overlays/prod/deployment.yaml
+        - kustomize/color/overlays/prod/rollout.yaml
