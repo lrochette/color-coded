@@ -86,7 +86,7 @@ steps:
       repo: '${{CF_REPO_OWNER}}/csdp_applications'
       git: github
       working_directory: '/codefresh/volume/csdp_applications'
-      commit_message: "Update image to deploy to ${{CF_SHORT_REVISION}}"
+      commit_message: "Update image to deploy in DEV to ${{CF_SHORT_REVISION}}"
       git_user_name: lrochette
       git_user_email: laurent.rochette@codefresh.io
       allow_empty: false
