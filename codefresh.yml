@@ -43,7 +43,6 @@ steps:
       CF_IMAGE: 'docker.io/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
       CF_CONTAINER_REGISTRY_INTEGRATION: docker-lr
       CF_RUNTIME_NAME: csdp
-      CF_ENRICHERS: 'jira,git'
       CF_GITHUB_TOKEN: '${{GITHUB_TOKEN}}'
       CF_GIT_PROVIDER: github
       CF_GIT_REPO: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
@@ -51,6 +50,7 @@ steps:
       CF_JIRA_INTEGRATION: jira-intg
       CF_JIRA_MESSAGE: "${{CF_COMMIT_MESSAGE}}"
       CF_JIRA_PROJECT_PREFIX: FT
+      # CF_ENRICHERS: 'jira,git'
 
   test:
     title: "Running test"
