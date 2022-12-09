@@ -33,6 +33,14 @@ steps:
     registry: docker-lr
     stage: "build"
 
+  push_to_ecr:
+    title: "Push image to ECR"
+    type: push
+    candidate: ${{build}}
+    image_name: lrochette/color
+    register: ecr
+    tag: "${{CF_SHORT_REVISION}}"
+
   ReportImageMetadataAll:
     title: Report image to Codefresh CD
     type: codefresh-report-image
