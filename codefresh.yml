@@ -38,7 +38,7 @@ steps:
     type: push
     candidate: ${{build}}
     image_name: lrochette/color
-    register: ecr
+    registry: ecr-lr
     tag: "${{CF_SHORT_REVISION}}"
 
   ReportImageMetadataAll:
