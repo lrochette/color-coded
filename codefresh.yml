@@ -40,6 +40,7 @@ steps:
     image_name: lrochette/color
     registry: ecr-lr
     tag: "${{CF_SHORT_REVISION}}"
+    stage: "build"
 
   ReportImageMetadataAll:
     title: Report image to Codefresh CD
