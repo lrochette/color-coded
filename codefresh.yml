@@ -69,10 +69,6 @@ steps:
           arguments:
             CF_IMAGE: '835357571861.dkr.ecr.us-east-1.amazonaws.com/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
             CF_CONTAINER_REGISTRY_INTEGRATION: ecr-intg    
-
-    arguments:
-      CF_API_KEY: '${{CF_API_KEY}}'
-
       # CF_ENRICHERS: 'jira,git'
 
   test:
