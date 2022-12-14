@@ -33,14 +33,14 @@ steps:
     registry: docker-lr
     stage: "build"
 
-  push_to_ecr:
-    title: "Push image to ECR"
-    type: push
-    candidate: ${{build}}
-    image_name: lrochette/color
-    registry: ecr-lr
-    tag: "${{CF_SHORT_REVISION}}"
-    stage: "build"
+  # push_to_ecr:
+  #   title: "Push image to ECR"
+  #   type: push
+  #   candidate: ${{build}}
+  #   image_name: lrochette/color
+  #   registry: ecr-lr
+  #   tag: "${{CF_SHORT_REVISION}}"
+  #   stage: "build"
 
 
   ReportImageMetadataAll:
@@ -58,16 +58,16 @@ steps:
       CF_JIRA_MESSAGE: "${{CF_COMMIT_MESSAGE}}"
       CF_JIRA_PROJECT_PREFIX: FT
     scale:
-      ecr:
+      docker:
         title: Report docker image to Codefresh CD
         arguments:
           CF_IMAGE: 'docker.io/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
           CF_CONTAINER_REGISTRY_INTEGRATION: docker-lr
-      docker:
-        title: Report ECR image to Codefresh CD
-        arguments:
-          CF_IMAGE: '835357571861.dkr.ecr.us-east-1.amazonaws.com/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
-          CF_CONTAINER_REGISTRY_INTEGRATION: ecr-intg
+      # ecr:
+      #   title: Report ECR image to Codefresh CD
+      #   arguments:
+      #     CF_IMAGE: '835357571861.dkr.ecr.us-east-1.amazonaws.com/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
+      #     CF_CONTAINER_REGISTRY_INTEGRATION: ecr-intg
       # CF_ENRICHERS: 'jira,git'
 
   test:
