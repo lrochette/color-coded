@@ -7,8 +7,8 @@ import (
 
 func main() {
 
-	version := "Blue"
-	color := "#44B3C2"
+	version := "Yellow"
+	color := "#F1A94E"
 	//Purple #7433FF
 	//Blue 44B3C2
 	//Yellow F1A94E
