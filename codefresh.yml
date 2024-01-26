@@ -62,7 +62,7 @@ steps:
         title: Report docker image to Codefresh CD
         arguments:
           CF_IMAGE: 'docker.io/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
-          CF_CONTAINER_REGISTRY_INTEGRATION: docker-lr
+          CF_CONTAINER_REGISTRY_INTEGRATION: docker-intg
       # ecr:
       #   title: Report ECR image to Codefresh CD
       #   arguments:
