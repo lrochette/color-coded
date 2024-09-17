@@ -72,7 +72,6 @@ steps:
 
   test:
     title: "Running test"
-    type: "freestyle" # Run any command
     image: "ubuntu:latest" # The image in which command will be executed
     working_directory: "${{clone}}"
     commands:
@@ -98,7 +97,7 @@ steps:
 
   commit_and_push_staging:
     title: Commit changes and push
-    type: git-commit
+    type: git-commit:0.1.4
     stage: staging
     arguments:
       repo: '${{CF_REPO_OWNER}}/csdp_applications'
@@ -130,7 +129,7 @@ steps:
 
   commit_and_push_production:
     title: Commit changes and push
-    type: git-commit
+    type: git-commit:0.1.4
     stage: production
     arguments:
       repo: '${{CF_REPO_OWNER}}/csdp_applications'
