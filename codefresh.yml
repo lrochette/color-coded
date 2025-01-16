@@ -54,7 +54,10 @@ steps:
       CF_GIT_PROVIDER: github
       CF_GIT_REPO: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
       CF_GIT_BRANCH: '${{CF_BRANCH}}'
-      CF_JIRA_INTEGRATION: jira-intg
+      #CF_JIRA_INTEGRATION: jira-intg
+      CF_JIRA_API_TOKEN: ${{JIRA_TOKEN}}
+      CF_JIRA_EMAIL: "laurent.rochette@codefresh.io"
+      CF_JIRA_HOST_URL: 'https://codefresh-io.atlassian.net'
       CF_JIRA_MESSAGE: "${{CF_COMMIT_MESSAGE_ESCAPED}}"
       CF_JIRA_PROJECT_PREFIX: FT
     scale:
@@ -62,7 +65,10 @@ steps:
         title: Report docker image to Codefresh CD
         arguments:
           CF_IMAGE: 'docker.io/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
-          CF_CONTAINER_REGISTRY_INTEGRATION: docker-intg
+          #CF_CONTAINER_REGISTRY_INTEGRATION: docker-intg
+          CF_REGISTRY_PASSWORD: $${DOCKER_TOKEN}}
+          CF_REGISTRY_USERNAME: lrochette
+          CF_REGISTRY_DOMAIN: 'docker.io'
       # ecr:
       #   title: Report ECR image to Codefresh CD
       #   arguments:
