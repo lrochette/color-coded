@@ -66,9 +66,9 @@ steps:
         arguments:
           CF_IMAGE: 'docker.io/${{CF_REPO_OWNER}}/color:${{CF_SHORT_REVISION}}'
           #CF_CONTAINER_REGISTRY_INTEGRATION: docker-intg
-          CF_REGISTRY_PASSWORD: ${{DOCKER_TOKEN}}
-          CF_REGISTRY_USERNAME: lrochette
-          CF_REGISTRY_DOMAIN: 'docker.io'
+          CF_DOCKERHUB_PASSWORD: ${{DOCKER_TOKEN}}
+          CF_DOCKERHUB_USERNAME: lrochette
+          #CF_REGISTRY_DOMAIN: 'docker.io'
       # ecr:
       #   title: Report ECR image to Codefresh CD
       #   arguments:
